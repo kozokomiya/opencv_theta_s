@@ -28,4 +28,5 @@ private:
     cv::Mat* map_y;
 };
 
+
 #endif /* ThetaConversion_hpp */

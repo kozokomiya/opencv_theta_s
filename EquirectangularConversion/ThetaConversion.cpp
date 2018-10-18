@@ -11,7 +11,6 @@
 using namespace cv;
 using namespace std;
 
-
 // Constructor
 ThetaConversion::ThetaConversion(int _w, int _h)
 {
@@ -21,7 +20,6 @@ ThetaConversion::ThetaConversion(int _w, int _h)
     map_y = new Mat(Size(cols, rows), CV_32FC1);
     makeMap();
 }
-
 
 // Make mapping table for equirectangular conversion
 void ThetaConversion::makeMap()

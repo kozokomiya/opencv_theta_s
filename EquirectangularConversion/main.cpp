@@ -2,7 +2,7 @@
 //  main.cpp
 //  EquirectangularConversion
 //
-//  Created by Kozo Komiya on 2018/10/17.
+//  Created by Kozo Komiya on 2018/10/18.
 //  Copyright © 2018 Kozo Komiya. All rights reserved.
 //
 
