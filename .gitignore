@@ -13,3 +13,6 @@
 ##
 *.xcworkspace/*
 !*.xcworkspace/contents.xcworkspacedata
+
+#
+*.mp4
