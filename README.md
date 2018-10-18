@@ -5,7 +5,7 @@
 
 `$ ec_thetas <input file> <output file>`
 
-<input file>にTheta Sで録画したDual Fisheye形式の動画ファイル、<output file>に変換後のファイル名を指定して実行すると、
+"<input file>"にTheta Sで録画したDual Fisheye形式の動画ファイル、"<output file>"に変換後のファイル名を指定して実行すると、
 Equirectangular形式に変換されて出力される。音声には対応していない。
 
 
