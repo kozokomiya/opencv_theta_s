@@ -62,7 +62,7 @@ int main(int argc, const char * argv[]) {
 //        cv::imshow("image", frame);
 //        if (cv::waitKey(1) >= 0) break;
         writer << mat;
-        if (i % 30 == 0) cout << '.';
+        if (i % 30 == 0) cout << '.' << flush;
     }
     cout << endl;
     return 0;
