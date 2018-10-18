@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		A813029C21772D94002A25CD /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A813029B21772D94002A25CD /* main.cpp */; };
+		A81302A421773A3D002A25CD /* libopencv_core.2.4.13.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A81302A321773A3D002A25CD /* libopencv_core.2.4.13.dylib */; };
+		A81302A621773A5A002A25CD /* libopencv_features2d.2.4.13.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A81302A521773A5A002A25CD /* libopencv_features2d.2.4.13.dylib */; };
+		A81302A821773A69002A25CD /* libopencv_highgui.2.4.13.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A81302A721773A69002A25CD /* libopencv_highgui.2.4.13.dylib */; };
+		A81302AA21773A79002A25CD /* libopencv_imgproc.2.4.13.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A81302A921773A79002A25CD /* libopencv_imgproc.2.4.13.dylib */; };
+		A81302AD21782441002A25CD /* ThetaConversion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A81302AB21782441002A25CD /* ThetaConversion.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,8 +28,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		A813029821772D94002A25CD /* EquirectangularConversion */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = EquirectangularConversion; sourceTree = BUILT_PRODUCTS_DIR; };
+		A813029821772D94002A25CD /* ec_thetas */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ec_thetas; sourceTree = BUILT_PRODUCTS_DIR; };
 		A813029B21772D94002A25CD /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		A81302A321773A3D002A25CD /* libopencv_core.2.4.13.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_core.2.4.13.dylib; path = "../../../../../usr/local/Cellar/opencv@2/2.4.13.6_2/lib/libopencv_core.2.4.13.dylib"; sourceTree = "<group>"; };
+		A81302A521773A5A002A25CD /* libopencv_features2d.2.4.13.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_features2d.2.4.13.dylib; path = "../../../../../usr/local/Cellar/opencv@2/2.4.13.6_2/lib/libopencv_features2d.2.4.13.dylib"; sourceTree = "<group>"; };
+		A81302A721773A69002A25CD /* libopencv_highgui.2.4.13.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_highgui.2.4.13.dylib; path = "../../../../../usr/local/Cellar/opencv@2/2.4.13.6_2/lib/libopencv_highgui.2.4.13.dylib"; sourceTree = "<group>"; };
+		A81302A921773A79002A25CD /* libopencv_imgproc.2.4.13.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_imgproc.2.4.13.dylib; path = "../../../../../usr/local/Cellar/opencv@2/2.4.13.6_2/lib/libopencv_imgproc.2.4.13.dylib"; sourceTree = "<group>"; };
+		A81302AB21782441002A25CD /* ThetaConversion.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ThetaConversion.cpp; sourceTree = "<group>"; };
+		A81302AC21782441002A25CD /* ThetaConversion.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ThetaConversion.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +43,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A81302A421773A3D002A25CD /* libopencv_core.2.4.13.dylib in Frameworks */,
+				A81302A621773A5A002A25CD /* libopencv_features2d.2.4.13.dylib in Frameworks */,
+				A81302A821773A69002A25CD /* libopencv_highgui.2.4.13.dylib in Frameworks */,
+				A81302AA21773A79002A25CD /* libopencv_imgproc.2.4.13.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,13 +58,14 @@
 			children = (
 				A813029A21772D94002A25CD /* EquirectangularConversion */,
 				A813029921772D94002A25CD /* Products */,
+				A81302A221773A3D002A25CD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		A813029921772D94002A25CD /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A813029821772D94002A25CD /* EquirectangularConversion */,
+				A813029821772D94002A25CD /* ec_thetas */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -58,8 +74,21 @@
 			isa = PBXGroup;
 			children = (
 				A813029B21772D94002A25CD /* main.cpp */,
+				A81302AB21782441002A25CD /* ThetaConversion.cpp */,
+				A81302AC21782441002A25CD /* ThetaConversion.hpp */,
 			);
 			path = EquirectangularConversion;
+			sourceTree = "<group>";
+		};
+		A81302A221773A3D002A25CD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A81302A921773A79002A25CD /* libopencv_imgproc.2.4.13.dylib */,
+				A81302A721773A69002A25CD /* libopencv_highgui.2.4.13.dylib */,
+				A81302A521773A5A002A25CD /* libopencv_features2d.2.4.13.dylib */,
+				A81302A321773A3D002A25CD /* libopencv_core.2.4.13.dylib */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -79,7 +108,7 @@
 			);
 			name = EquirectangularConversion;
 			productName = EquirectangularConversion;
-			productReference = A813029821772D94002A25CD /* EquirectangularConversion */;
+			productReference = A813029821772D94002A25CD /* ec_thetas */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -118,6 +147,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A81302AD21782441002A25CD /* ThetaConversion.cpp in Sources */,
 				A813029C21772D94002A25CD /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -241,7 +271,12 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3ZRMF8WB8V;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				HEADER_SEARCH_PATHS = "/usr/local/Cellar/opencv@2/**";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/usr/local/Cellar/opencv@2/2.4.13.6_2/lib",
+				);
+				PRODUCT_NAME = ec_thetas;
 			};
 			name = Debug;
 		};
@@ -250,7 +285,12 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3ZRMF8WB8V;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				HEADER_SEARCH_PATHS = "/usr/local/Cellar/opencv@2/**";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/usr/local/Cellar/opencv@2/2.4.13.6_2/lib",
+				);
+				PRODUCT_NAME = ec_thetas;
 			};
 			name = Release;
 		};
