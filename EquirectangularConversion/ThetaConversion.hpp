@@ -21,11 +21,15 @@ public:
     void doConversion(cv::Mat &mat);
     void overlaySizeInfo(cv::Mat &mat);
     void equirectangularConversion(cv::Mat &mat);
+    void antiRotate(cv::Mat &mat);
 private:
     int cols;
     int rows;
+    int shift;
     cv::Mat* map_x;
     cv::Mat* map_y;
+    cv::Mat prev;
+    int diffRotate(cv::Mat &mat);
 };
 
 

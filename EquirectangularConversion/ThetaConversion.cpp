@@ -61,21 +61,67 @@ void ThetaConversion::makeMap()
     }
 }
 
-void ThetaConversion::doConversion(cv::Mat &mat)
+void ThetaConversion::doConversion(Mat &mat)
 {
     equirectangularConversion(mat);
+    antiRotate(mat);
     overlaySizeInfo(mat);
 }
 
-void ThetaConversion::overlaySizeInfo(cv::Mat &mat)
+void ThetaConversion::overlaySizeInfo(Mat &mat)
 {
     string s = "Size: " + to_string(cols) + "x" + to_string(rows);
     putText(mat, s, Point(20, 80), FONT_HERSHEY_SIMPLEX, 0.8, Scalar(20,230,20), 2, CV_AA);
 }
 
-void ThetaConversion::equirectangularConversion(cv::Mat &mat)
+void ThetaConversion::equirectangularConversion(Mat &mat)
 {
     Mat buf = Mat(mat.size(), mat.type());
     remap(mat, buf, *map_x, *map_y, CV_INTER_LINEAR, BORDER_CONSTANT, Scalar(0,0,0));
     buf.copyTo(mat);
+}
+
+void ThetaConversion::antiRotate(Mat &mat)
+{
+    shift += diffRotate(mat);
+    Mat buf;
+    
+    if (shift >= cols) shift -= cols;
+    if (shift <  0   ) shift += cols;
+    if (shift != 0) {
+        Mat buf;
+        Rect r1(Point(0    , 0), Size(shift       , rows));
+        Rect r2(Point(shift, 0), Size(cols - shift, rows));
+        hconcat(mat(r2), mat(r1), buf);
+        buf.copyTo(mat);
+    }
+}
+
+int ThetaConversion::diffRotate(Mat& mat)
+{
+    const int y1 = rows / 2;
+    Rect r1(0, y1, cols, 1);
+    Mat l1(mat, r1);
+    Mat m1;
+    cvtColor(l1, m1, CV_RGB2GRAY);
+    int ret = 0;
+
+    if (prev.cols == cols) {
+        int w0 = cols / 12;
+        Rect rs0(0, 0, w0, 1);
+        Mat t1;
+        hconcat(prev, prev(rs0), t1);
+        Rect rs1(cols - w0, 0, w0, 1);
+        Mat b1;
+        hconcat(prev(rs1), t1, b1);
+        Mat result1;
+        matchTemplate(b1, m1, result1, CV_TM_CCOEFF);
+        Point p1;
+        double v1;
+        minMaxLoc(result1, NULL, &v1, NULL, &p1);
+        ret = w0 - p1.x;
+    }
+
+    m1.copyTo(prev);
+    return ret;
 }
