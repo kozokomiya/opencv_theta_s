@@ -1,6 +1,11 @@
 # Theta S用のEquirectangular変換
 
 
+## 概要
+
+Theta Sで撮影したDual Fisheye画像をVRデバイスで再生できるEquirectangular形式に変換する。
+また、Theta Sカメラが横方向に回転した時に、画像を解析しその回転を除去する。
+
 ## 使い方
 
 `$ ec_thetas <input file> <output file>`
