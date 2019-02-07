@@ -1,4 +1,4 @@
-# Theta S用のEquirectangular変換
+# Theta S用のEquirectangular変換(C++)
 
 
 ## 概要
